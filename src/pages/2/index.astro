@@ -1,0 +1,15 @@
+---
+// src/pages/index.astro
+// Note: Make sure you add the "<ViewTransitions />" component
+// to other pages as well, and not just one.
+import {ViewTransitions} from 'astro:transitions';
+---
+<head>
+  <meta charset="utf8">
+  <title>My View Transition Demo</title>
+  <ViewTransitions />
+</head>
+<body>
+    <div class="text-center text-blue-500 hover:text-blue-200" ><a href="/">前のページへ</a></div>
+  <div class="bg-red-500 w-1/2 pr-10 py-4" transition:name="next-page" transition:animate="fade"></div>
+</body>

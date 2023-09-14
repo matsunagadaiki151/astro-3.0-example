@@ -1,0 +1,21 @@
+---
+import { ViewTransitions, fade } from "astro:transitions";
+import {blogs} from "../../blog"
+export function getStaticPaths() {
+  return [
+    { params: { id: 1 } },
+    { params: { id: 2 } },
+  ];
+}
+
+const { id } = Astro.params
+const blog = blogs[parseInt(id!)-1]
+---
+<head>
+    <meta charset="utf8">
+    <title>My View Transition Demo</title>
+    <ViewTransitions />
+</head>
+<body>
+    <div class="text-center mt-10 m-auto text-3xl font-marugo">{blog.title ?? "タイトルがありません"}</div>
+</body>
